@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" />
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="StopLightData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Account_Info" nillable="true" type="q1:AccountInfo" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="AssetsCost_Indo" nillable="true" type="q2:AssetsInfo" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="AuthorizedReduce_Info" nillable="true" type="q3:AuthorizedReduceInfo" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="BankruptcyYellow_Info" nillable="true" type="q4:BankruptcyInfo" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Bankruptcy_Info" nillable="true" type="q5:BankruptcyInfo" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="CommingStop_Info" nillable="true" type="q6:CommingStopInfo" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="CompromiseRecords_Info" nillable="true" type="q7:RegEgrulInfo" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Disqualification1_Info" nillable="true" type="q8:DisqualInfo" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Disqualification2_Info" nillable="true" type="q9:RegEgrulInfo" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="EgrulExistance_Info" nillable="true" type="q10:EgrulInfo" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Factors" nillable="true" type="q11:ArrayOfKeyValueOfStopFactorTypesStopFactorEU27ROKu" />
+      <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Legacy1_Info" nillable="true" type="q12:LegacyInfo" />
+      <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Legacy2_Info" nillable="true" type="q13:RegEgrulInfo" />
+      <xs:element minOccurs="0" name="Ogrn" nillable="true" type="xs:string" />
+      <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Profit_Info" nillable="true" type="q14:ProfitInfo" />
+      <xs:element minOccurs="0" name="Rating" type="tns:ColorRate" />
+      <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="StopAction_Info" nillable="true" type="q15:StopInfo" />
+      <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="UnfairSupplier_Info" nillable="true" type="q16:UnFairInfo" />
+      <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="YellowLegacy_Info" nillable="true" type="q17:LegacyInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLightData" nillable="true" type="tns:StopLightData" />
+  <xs:simpleType name="StopFactorTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EgrulExistance" />
+      <xs:enumeration value="Legacy1" />
+      <xs:enumeration value="Bankruptcy" />
+      <xs:enumeration value="CommingStop" />
+      <xs:enumeration value="StopAction" />
+      <xs:enumeration value="Legacy2" />
+      <xs:enumeration value="Disqualification1" />
+      <xs:enumeration value="Disqualification2" />
+      <xs:enumeration value="AuthorizedReduce" />
+      <xs:enumeration value="CompromiseRecords" />
+      <xs:enumeration value="UnfairSupplier" />
+      <xs:enumeration value="Account" />
+      <xs:enumeration value="Profit" />
+      <xs:enumeration value="AssetsCost" />
+      <xs:enumeration value="LegacyYellow" />
+      <xs:enumeration value="BankruptcyYellow" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StopFactorTypes" nillable="true" type="tns:StopFactorTypes" />
+  <xs:complexType name="StopFactor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Info" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsStoped" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsUnconditional" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopFactor" nillable="true" type="tns:StopFactor" />
+  <xs:simpleType name="ColorRate">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Red" />
+      <xs:enumeration value="Yellow" />
+      <xs:enumeration value="Green" />
+      <xs:enumeration value="NoRating" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ColorRate" nillable="true" type="tns:ColorRate" />
+  <xs:complexType name="StopLightIPData">
+    <xs:sequence>
+      <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Bankruptcy_Info" nillable="true" type="q18:BankruptcyIpInfo" />
+      <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="CompromiseRecords_Info" nillable="true" type="q19:RegEgripInfo" />
+      <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Disqualification_Info" nillable="true" type="q20:RegEgripInfo" />
+      <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="EgripExistance_Info" nillable="true" type="q21:EgripInfo" />
+      <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Factors" nillable="true" type="q22:ArrayOfKeyValueOfStopFactorIPTypesStopFactorEU27ROKu" />
+      <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Legacy1_Info" nillable="true" type="q23:LegacyIPInfo" />
+      <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="Legacy2_Info" nillable="true" type="q24:RegEgripInfo" />
+      <xs:element minOccurs="0" name="Ogrnip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rating" type="tns:ColorRate" />
+      <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="StopAction_Info" nillable="true" type="q25:StopIpInfo" />
+      <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" minOccurs="0" name="UnfairSupplier_Info" nillable="true" type="q26:UnFairIpInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StopLightIPData" nillable="true" type="tns:StopLightIPData" />
+  <xs:simpleType name="StopFactorIPTypes">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EgripExistance" />
+      <xs:enumeration value="Bankruptcy" />
+      <xs:enumeration value="Legacy1" />
+      <xs:enumeration value="StopAction" />
+      <xs:enumeration value="Legacy2" />
+      <xs:enumeration value="Disqualification2" />
+      <xs:enumeration value="CompromiseRecords" />
+      <xs:enumeration value="UnfairSupplier" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StopFactorIPTypes" nillable="true" type="tns:StopFactorIPTypes" />
+</xs:schema>

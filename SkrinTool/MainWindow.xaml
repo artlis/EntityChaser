@@ -1,0 +1,48 @@
+﻿<Window x:Class="SkrinTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:gif="http://wpfanimatedgif.codeplex.com" 
+        xmlns:local="clr-namespace:SkrinTool"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="658" Width="971">
+    <Grid x:Name="MainGrid" OpacityMask="#FF040404" Loaded="OnMainWindowLoaded" Margin="0,0,0,19">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="380*"/>
+            <ColumnDefinition Width="583*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="OkpoTbx" HorizontalAlignment="Left" Height="26" Margin="138,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+        <Label Content="ИНН" HorizontalAlignment="Left" Margin="36,65,0,0" VerticalAlignment="Top" Height="23" RenderTransformOrigin="1.38,0.667"/>
+        <Label Content="ОКПО" HorizontalAlignment="Left" Margin="33,116,0,0" VerticalAlignment="Top" Width="53"/>
+        <Label Content="ОГРН" HorizontalAlignment="Left" Margin="33,169,0,0" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="InnTbx" HorizontalAlignment="Left" Height="23" Margin="138,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" AutomationProperties.HelpText="mmmm"/>
+        <TextBox x:Name="OgrnTbx" HorizontalAlignment="Left" Height="26" Margin="138,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+        <Button x:Name="HistoryBtn" Content="History" HorizontalAlignment="Left" Margin="241,251,0,0" VerticalAlignment="Top" Width="75" Click="HistoryBtn_Click"/>
+        <Button x:Name="ReportBtn" Content="Report" HorizontalAlignment="Left" Margin="39,251,0,0" VerticalAlignment="Top" Width="75" Click="ReportBtn_Click"/>
+        <Button x:Name="StructureBtn" Content="Structure" HorizontalAlignment="Left" Margin="138,251,0,0" VerticalAlignment="Top" Width="75" Click="StructureBtn_Click"/>
+        <Label Content="Результат:" HorizontalAlignment="Left" Margin="43,15,0,0" VerticalAlignment="Top" Height="39" Width="93" Grid.Column="1"/>
+        <ScrollViewer x:Name="ResultView" HorizontalAlignment="Left" Height="308" Margin="43,54,0,0" VerticalAlignment="Top" Width="491" BorderThickness="1" BorderBrush="Black" Grid.Column="1">
+
+            <!--<TextBlock x:Name="ResultViewTbx" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top"/>-->
+
+
+            <TextBox x:Name="ResultViewTbx"
+         BorderThickness="1" BorderBrush="DarkGray"
+         IsReadOnly="True"
+         TextWrapping="Wrap" Background="{x:Null}" Height="308" />
+        </ScrollViewer>
+        <Button x:Name="CopyBtn" Content="Copy" HorizontalAlignment="Left" Margin="458,398,0,0" VerticalAlignment="Top" Width="76" Click="CopyBtn_Click" Grid.Column="1"/>
+
+        <Label Content="Инструкция:&#xD;&#xA;1. Заполнить любое из полей: ИНН, ОКПО, ОГРН&#xD;&#xA;2. Нажать клавишу Report / Structure / History&#xD;&#xA;3. Нажать клавишу Copy&#xD;&#xA;4. Перейти по ссылке: https://jsonformatter.org/&#xD;&#xA;5. Вставить скопированный текст&#xD;&#xA; " HorizontalAlignment="Left" Margin="39,320,0,0" VerticalAlignment="Top" Height="116" Width="293"/>
+
+        <Image x:Name="Loader" gif:ImageBehavior.AnimatedSource="giphy.gif" Margin="305,389,300,34" OpacityMask="Black" Grid.ColumnSpan="2" />
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="458,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top"> 
+            <Hyperlink NavigateUri="https://jsonformatter.org/" RequestNavigate="Hyperlink_RequestNavigate">JsonFormatter</Hyperlink>
+        </TextBlock>
+        <TextBlock x:Name="DiclaimerTbx" HorizontalAlignment="Left" Margin="73,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1">
+            <Hyperlink NavigateUri="https://giphy.com/" RequestNavigate="Hyperlink_RequestNavigate">giphy.com</Hyperlink>
+        </TextBlock>
+
+    </Grid>
+</Window>

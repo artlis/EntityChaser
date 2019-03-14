@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c2c14701-53b8-4949-be2f-fd4f75529db4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://api.skrin.ru/ApiSkrin.svc " Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ApiSkrin.xsd" MetadataType="Schema" ID="1e688e27-8639-414a-a9ee-7c692a0129a5" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd5" />
+    <MetadataFile FileName="ApiSkrin1.xsd" MetadataType="Schema" ID="73f3f853-eac6-463d-a69d-4946167afaed" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd4" />
+    <MetadataFile FileName="ApiSkrin2.xsd" MetadataType="Schema" ID="d52c157f-6fae-4c08-8289-4fb9a1af8ae9" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd7" />
+    <MetadataFile FileName="ApiSkrin3.xsd" MetadataType="Schema" ID="d7b4c7e2-773d-41b0-8b79-179e9c24c6e2" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd6" />
+    <MetadataFile FileName="ApiSkrin4.xsd" MetadataType="Schema" ID="69da28a4-79d3-4f64-b334-e81d915f974e" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd1" />
+    <MetadataFile FileName="ApiSkrin5.xsd" MetadataType="Schema" ID="e385e07f-086c-4e57-9344-de4fe7c20152" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd0" />
+    <MetadataFile FileName="ApiSkrin6.xsd" MetadataType="Schema" ID="8447165c-548c-415e-a632-7d227fa6c0fd" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd3" />
+    <MetadataFile FileName="ApiSkrin7.xsd" MetadataType="Schema" ID="7fa6d1e3-6084-4f65-8500-cb6b29a0675a" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd2" />
+    <MetadataFile FileName="ApiSkrin.disco" MetadataType="Disco" ID="3e2c5bb7-4d33-4d9f-a14a-7b803ff9be1a" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?disco" />
+    <MetadataFile FileName="ApiSkrin.wsdl" MetadataType="Wsdl" ID="3441825c-b317-45bd-a29e-eebfe6d67a28" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?wsdl" />
+    <MetadataFile FileName="ApiSkrin8.xsd" MetadataType="Schema" ID="5072f0fe-7155-406d-a2e6-3831b447432f" SourceId="1" SourceUrl="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd8" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

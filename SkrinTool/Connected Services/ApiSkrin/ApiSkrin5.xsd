@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ApiService" />
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" />
+  <xs:element name="ServiceAuthorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceAuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ServiceAuthorizationResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceExit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ServiceExitResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="search" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strict" type="xs:boolean" />
+        <xs:element minOccurs="0" name="okato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okopf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="regions" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruler" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="constr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okved" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rgstr" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchResult" nillable="true" type="q1:SearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="search" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strict" type="xs:boolean" />
+        <xs:element minOccurs="0" name="okato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okopf" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="regions" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruler" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="constr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okved" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rgstr" type="xs:int" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+        <xs:element minOccurs="0" name="archive" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="Search2Result" nillable="true" type="q2:SearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMain" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetProfileULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetProfileULResult" nillable="true" type="q3:CompanyProfileResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isMain" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetCompanyReportResult" nillable="true" type="q4:CompanyReportResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyStructure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyStructureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetCompanyStructureResult" nillable="true" type="q5:CompanyStructure" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyCoownersHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyCoownersHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetCompanyCoownersHistoryResult" nillable="true" type="q6:CompanyCoownersHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruler" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="codes" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okato" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="regions" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="industry" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strict" type="xs:boolean" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchIPResult" nillable="true" type="q7:EntrepreneurList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntrepreneurReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrnip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ruler" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntrepreneurReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetEntrepreneurReportResult" nillable="true" type="q8:EntrepreneurReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyOwnershipHierarchy">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="max_level" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCompanyOwnershipHierarchyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetCompanyOwnershipHierarchyResult" nillable="true" type="q9:CompanyOwnershipHierarchy" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLight">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetStopLightResult" nillable="true" type="q10:StopLightResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="obj" nillable="true" type="q11:StopLightListObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetStopLightListResult" nillable="true" type="q12:StopLightRating" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrnip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetStopLightIPResult" nillable="true" type="q13:StopLightIPResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightIPList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="obj" nillable="true" type="q14:StopLightListObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStopLightIPListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetStopLightIPListResult" nillable="true" type="q15:StopLightIPRating" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPravoUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="okpo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPravoULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchPravoULResult" nillable="true" type="q16:PravoSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPravoIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrnip" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPravoIPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchPravoIPResult" nillable="true" type="q17:PravoSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchDebtResult" nillable="true" type="q18:DebtSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDebtFL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameF" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="region" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDebtFLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchDebtFLResult" nillable="true" type="q19:DebtFlResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisqualifiedPersons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DisqualifiedPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="DisqualifiedPersonsResult" nillable="true" type="q20:DisqualifiedPerson" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublPersons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="withHistory" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PublPersonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="PublPersonsResult" nillable="true" type="q21:PublPersonsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBalanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetBalanceResult" nillable="true" type="q22:BalanceSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchZakupki">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchZakupkiResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchZakupkiResult" nillable="true" type="q23:ZakupkiSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPassport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="num" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckPassportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="CheckPassportResult" nillable="true" type="q24:PassportResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTerrorUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="search_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTerrorULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchTerrorULResult" nillable="true" type="q25:TerrorSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTerrorFL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="search_name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTerrorFLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchTerrorFLResult" nillable="true" type="q26:TerrorSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BankruptcyUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BankruptcyULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="BankruptcyULResult" nillable="true" type="q27:BankruptcyResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BankruptcyFL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BankruptcyFLResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="BankruptcyFLResult" nillable="true" type="q28:BankruptcyResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAccount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckAccountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="CheckAccountResult" nillable="true" type="q29:AccountResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckZalog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckZalogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="CheckZalogResult" nillable="true" type="q30:ZalogResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckWorkPermit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="doc_series" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="doc_number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blank_series" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="blank_number" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="passport_number" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckWorkPermitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="CheckWorkPermitResult" nillable="true" type="q31:WorkPermitResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInnFl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameF" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameI" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nameO" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="birthDate" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docType" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="docDate" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetInnFlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="GetInnFlResult" nillable="true" type="q32:InnFlResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMassReg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="region_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="region_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="district_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="district_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="city_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="city_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="locality_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="locality_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="street_name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="street_type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="house" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="building" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="apartment" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMassRegResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchMassRegResult" nillable="true" type="q33:MassRegResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FATF">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oksm" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FATFResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="FATFResult" nillable="true" type="q34:FATFResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAlcohol">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchAlcoholResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchAlcoholResult" nillable="true" type="q35:AlcoholResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHealth">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchHealthResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchHealthResult" nillable="true" type="q36:HealthResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRospotrebnadzor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRospotrebnadzorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchRospotrebnadzorResult" nillable="true" type="q37:RospotrebnadzorResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MassLeaderAndFounder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="firstName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patronymic" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MassLeaderAndFounderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="MassLeaderAndFounderResult" nillable="true" type="q38:MassLeaderAndFounderResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRosobrnadzor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRosobrnadzorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchRosobrnadzorResult" nillable="true" type="q39:RosobrnadzorResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnreliabilityAddressUL">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UnreliabilityAddressULResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="UnreliabilityAddressULResult" nillable="true" type="q40:UnreliabilityAddressULResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRostehnadzor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRostehnadzorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchRostehnadzorResult" nillable="true" type="q41:RostehnadzorSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRosprirodnadzor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="count" type="xs:int" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchRosprirodnadzorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchRosprirodnadzorResult" nillable="true" type="q42:RosprirodnadzorSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBadProvider">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckBadProviderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="CheckBadProviderResult" nillable="true" type="q43:BadProviderResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NalogDebt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NalogDebtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="NalogDebtResult" nillable="true" type="q44:NalogDebtResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTrademark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="page" type="xs:int" />
+        <xs:element minOccurs="0" name="cnt" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchTrademarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="SearchTrademarkResult" nillable="true" type="q45:TrademarkSearchResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsFl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="withHistory" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsFlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ApiService.Models" minOccurs="0" name="CheckSanctionsFlResult" nillable="true" type="q46:SantionsResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsUl">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="withHistory" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsUlResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ApiService.Models" minOccurs="0" name="CheckSanctionsUlResult" nillable="true" type="q47:SantionsResultUl" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsIndirect">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckSanctionsIndirectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ApiService.Models" minOccurs="0" name="CheckSanctionsIndirectResult" nillable="true" type="q48:SanctionsIndirectResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLStructure">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="include_archive" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFLStructureResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ApiService.Models" minOccurs="0" name="GetFLStructureResult" nillable="true" type="q49:FLStructureResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportEgrul">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportEgrulResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="ReportEgrulResult" nillable="true" type="q50:FileTransferResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportEgrip">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userID" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ogrnip" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportEgripResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/ApiService" minOccurs="0" name="ReportEgripResult" nillable="true" type="q51:FileTransferResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

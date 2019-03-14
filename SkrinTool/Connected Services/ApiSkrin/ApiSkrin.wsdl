@@ -1,0 +1,1986 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ApiSkrin" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IApiSkrin1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ApiService" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/serch_contra_bll.StopLightFreeEgrul.Info" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Skrin.Models.Iss.Content" />
+      <xsd:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SkrinBLL.Models" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IApiSkrin_ServiceAuthorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ServiceAuthorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceAuthorizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ServiceAuthorization_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q1:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ServiceExit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceExit" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ServiceExit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ServiceExitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q2:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search2_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search2" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Search2Response" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_Search2_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q3:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetProfileUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileUL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetProfileUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileULResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetProfileUL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q4:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyReport" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyReport_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q5:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyStructure" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyStructure_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q6:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyCoownersHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCoownersHistory" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyCoownersHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyCoownersHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyCoownersHistory_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q7:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchIP" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchIP_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q8:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetEntrepreneurReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntrepreneurReport" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetEntrepreneurReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntrepreneurReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetEntrepreneurReport_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q9:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyOwnershipHierarchy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyOwnershipHierarchy" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyOwnershipHierarchy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCompanyOwnershipHierarchyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetCompanyOwnershipHierarchy_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q10:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLight_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLight" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLight_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q11:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightList" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightList_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q12:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightIP" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIP_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q13:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIPList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightIPList" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIPList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStopLightIPListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetStopLightIPList_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q14:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPravoUL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPravoULResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoUL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q15:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPravoIP" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPravoIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchPravoIP_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q16:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDebt" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebt_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q17:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebtFL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDebtFL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebtFL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDebtFLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchDebtFL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q18:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_DisqualifiedPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisqualifiedPersons" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_DisqualifiedPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisqualifiedPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_DisqualifiedPersons_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q19="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q19:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_PublPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:PublPersons" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_PublPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PublPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_PublPersons_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q20="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q20:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetBalance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalance" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetBalance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetBalance_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q21="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q21:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchZakupki_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchZakupki" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchZakupki_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchZakupkiResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchZakupki_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q22="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q22:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckPassport_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPassport" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckPassport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckPassportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckPassport_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q23="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q23:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerrorUL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerrorULResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorUL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q24="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q24:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorFL_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerrorFL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorFL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTerrorFLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTerrorFL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q25="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q25:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:BankruptcyUL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BankruptcyULResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyUL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q26="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q26:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyFL_InputMessage">
+    <wsdl:part name="parameters" element="tns:BankruptcyFL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyFL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BankruptcyFLResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_BankruptcyFL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q27="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q27:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAccount" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckAccount_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q28="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q28:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckZalog_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckZalog" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckZalog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckZalogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckZalog_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q29="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q29:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckWorkPermit_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckWorkPermit" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckWorkPermit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckWorkPermitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckWorkPermit_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q30="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q30:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetInnFl_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInnFl" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetInnFl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInnFlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetInnFl_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q31="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q31:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchMassReg_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMassReg" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchMassReg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMassRegResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchMassReg_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q32="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q32:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_FATF_InputMessage">
+    <wsdl:part name="parameters" element="tns:FATF" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_FATF_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FATFResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_FATF_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q33="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q33:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchAlcohol_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAlcohol" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchAlcohol_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchAlcoholResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchAlcohol_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q34="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q34:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchHealth_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchHealth" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchHealth_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchHealthResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchHealth_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q35="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q35:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRospotrebnadzor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRospotrebnadzor" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRospotrebnadzor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRospotrebnadzorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRospotrebnadzor_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q36="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q36:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_MassLeaderAndFounder_InputMessage">
+    <wsdl:part name="parameters" element="tns:MassLeaderAndFounder" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_MassLeaderAndFounder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MassLeaderAndFounderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_MassLeaderAndFounder_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q37="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q37:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosobrnadzor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRosobrnadzor" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosobrnadzor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRosobrnadzorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosobrnadzor_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q38="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q38:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_UnreliabilityAddressUL_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnreliabilityAddressUL" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_UnreliabilityAddressUL_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnreliabilityAddressULResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_UnreliabilityAddressUL_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q39="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q39:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRostehnadzor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRostehnadzor" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRostehnadzor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRostehnadzorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRostehnadzor_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q40="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q40:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosprirodnadzor_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRosprirodnadzor" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosprirodnadzor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchRosprirodnadzorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchRosprirodnadzor_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q41="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q41:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckBadProvider_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBadProvider" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckBadProvider_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckBadProviderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckBadProvider_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q42="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q42:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_NalogDebt_InputMessage">
+    <wsdl:part name="parameters" element="tns:NalogDebt" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_NalogDebt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NalogDebtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_NalogDebt_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q43="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q43:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTrademark_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTrademark" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTrademark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchTrademarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_SearchTrademark_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q44="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q44:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsFl_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsFl" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsFl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsFlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsFl_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q45="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q45:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsUl_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsUl" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsUl_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsUlResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsUl_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q46="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q46:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsIndirect_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsIndirect" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsIndirect_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckSanctionsIndirectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_CheckSanctionsIndirect_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q47="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q47:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetFLStructure_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFLStructure" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetFLStructure_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFLStructureResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_GetFLStructure_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q48="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q48:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrul_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportEgrul" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrul_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportEgrulResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrul_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q49="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q49:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrip_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportEgrip" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrip_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportEgripResponse" />
+  </wsdl:message>
+  <wsdl:message name="IApiSkrin_ReportEgrip_SeacherFaultTrackFault_FaultMessage">
+    <wsdl:part xmlns:q50="http://schemas.datacontract.org/2004/07/ApiService" name="detail" element="q50:SeacherFaultTrack" />
+  </wsdl:message>
+  <wsdl:portType name="IApiSkrin">
+    <wsdl:operation name="ServiceAuthorization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/ServiceAuthorization" message="tns:IApiSkrin_ServiceAuthorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/ServiceAuthorizationResponse" message="tns:IApiSkrin_ServiceAuthorization_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/ServiceAuthorizationSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_ServiceAuthorization_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceExit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/ServiceExit" message="tns:IApiSkrin_ServiceExit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/ServiceExitResponse" message="tns:IApiSkrin_ServiceExit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/Search" message="tns:IApiSkrin_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchResponse" message="tns:IApiSkrin_Search_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_Search_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/Search2" message="tns:IApiSkrin_Search2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/Search2Response" message="tns:IApiSkrin_Search2_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/Search2SeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_Search2_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetProfileUL" message="tns:IApiSkrin_GetProfileUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetProfileULResponse" message="tns:IApiSkrin_GetProfileUL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetProfileULSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetProfileUL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyReport" message="tns:IApiSkrin_GetCompanyReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyReportResponse" message="tns:IApiSkrin_GetCompanyReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyReportSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetCompanyReport_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyStructure" message="tns:IApiSkrin_GetCompanyStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyStructureResponse" message="tns:IApiSkrin_GetCompanyStructure_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyStructureSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetCompanyStructure_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCoownersHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyCoownersHistory" message="tns:IApiSkrin_GetCompanyCoownersHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyCoownersHistoryResponse" message="tns:IApiSkrin_GetCompanyCoownersHistory_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyCoownersHistorySeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetCompanyCoownersHistory_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchIP" message="tns:IApiSkrin_SearchIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchIPResponse" message="tns:IApiSkrin_SearchIP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchIPSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchIP_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntrepreneurReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetEntrepreneurReport" message="tns:IApiSkrin_GetEntrepreneurReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetEntrepreneurReportResponse" message="tns:IApiSkrin_GetEntrepreneurReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetEntrepreneurReportSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetEntrepreneurReport_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOwnershipHierarchy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyOwnershipHierarchy" message="tns:IApiSkrin_GetCompanyOwnershipHierarchy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyOwnershipHierarchyResponse" message="tns:IApiSkrin_GetCompanyOwnershipHierarchy_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetCompanyOwnershipHierarchySeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetCompanyOwnershipHierarchy_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLight">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLight" message="tns:IApiSkrin_GetStopLight_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightResponse" message="tns:IApiSkrin_GetStopLight_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetStopLight_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightList" message="tns:IApiSkrin_GetStopLightList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightListResponse" message="tns:IApiSkrin_GetStopLightList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightListSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetStopLightList_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIP" message="tns:IApiSkrin_GetStopLightIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIPResponse" message="tns:IApiSkrin_GetStopLightIP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIPSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetStopLightIP_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIPList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIPList" message="tns:IApiSkrin_GetStopLightIPList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIPListResponse" message="tns:IApiSkrin_GetStopLightIPList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetStopLightIPListSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetStopLightIPList_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoUL" message="tns:IApiSkrin_SearchPravoUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoULResponse" message="tns:IApiSkrin_SearchPravoUL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoULSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchPravoUL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoIP" message="tns:IApiSkrin_SearchPravoIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoIPResponse" message="tns:IApiSkrin_SearchPravoIP_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchPravoIPSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchPravoIP_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebt" message="tns:IApiSkrin_SearchDebt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebtResponse" message="tns:IApiSkrin_SearchDebt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebtSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchDebt_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebtFL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebtFL" message="tns:IApiSkrin_SearchDebtFL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebtFLResponse" message="tns:IApiSkrin_SearchDebtFL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchDebtFLSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchDebtFL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisqualifiedPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/DisqualifiedPersons" message="tns:IApiSkrin_DisqualifiedPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/DisqualifiedPersonsResponse" message="tns:IApiSkrin_DisqualifiedPersons_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/DisqualifiedPersonsSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_DisqualifiedPersons_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PublPersons">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/PublPersons" message="tns:IApiSkrin_PublPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/PublPersonsResponse" message="tns:IApiSkrin_PublPersons_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/PublPersonsSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_PublPersons_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetBalance" message="tns:IApiSkrin_GetBalance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetBalanceResponse" message="tns:IApiSkrin_GetBalance_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetBalanceSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetBalance_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchZakupki">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchZakupki" message="tns:IApiSkrin_SearchZakupki_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchZakupkiResponse" message="tns:IApiSkrin_SearchZakupki_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchZakupkiSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchZakupki_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckPassport" message="tns:IApiSkrin_CheckPassport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckPassportResponse" message="tns:IApiSkrin_CheckPassport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckPassportSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckPassport_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorUL" message="tns:IApiSkrin_SearchTerrorUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorULResponse" message="tns:IApiSkrin_SearchTerrorUL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorULSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchTerrorUL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorFL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorFL" message="tns:IApiSkrin_SearchTerrorFL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorFLResponse" message="tns:IApiSkrin_SearchTerrorFL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchTerrorFLSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchTerrorFL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyUL" message="tns:IApiSkrin_BankruptcyUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyULResponse" message="tns:IApiSkrin_BankruptcyUL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyULSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_BankruptcyUL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyFL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyFL" message="tns:IApiSkrin_BankruptcyFL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyFLResponse" message="tns:IApiSkrin_BankruptcyFL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/BankruptcyFLSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_BankruptcyFL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckAccount" message="tns:IApiSkrin_CheckAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckAccountResponse" message="tns:IApiSkrin_CheckAccount_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckAccountSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckAccount_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckZalog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckZalog" message="tns:IApiSkrin_CheckZalog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckZalogResponse" message="tns:IApiSkrin_CheckZalog_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckZalogSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckZalog_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckWorkPermit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckWorkPermit" message="tns:IApiSkrin_CheckWorkPermit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckWorkPermitResponse" message="tns:IApiSkrin_CheckWorkPermit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckWorkPermitSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckWorkPermit_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInnFl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetInnFl" message="tns:IApiSkrin_GetInnFl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetInnFlResponse" message="tns:IApiSkrin_GetInnFl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetInnFlSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetInnFl_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMassReg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchMassReg" message="tns:IApiSkrin_SearchMassReg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchMassRegResponse" message="tns:IApiSkrin_SearchMassReg_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchMassRegSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchMassReg_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FATF">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/FATF" message="tns:IApiSkrin_FATF_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/FATFResponse" message="tns:IApiSkrin_FATF_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/FATFSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_FATF_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlcohol">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchAlcohol" message="tns:IApiSkrin_SearchAlcohol_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchAlcoholResponse" message="tns:IApiSkrin_SearchAlcohol_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchAlcoholSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchAlcohol_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchHealth">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchHealth" message="tns:IApiSkrin_SearchHealth_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchHealthResponse" message="tns:IApiSkrin_SearchHealth_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchHealthSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchHealth_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRospotrebnadzor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchRospotrebnadzor" message="tns:IApiSkrin_SearchRospotrebnadzor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchRospotrebnadzorResponse" message="tns:IApiSkrin_SearchRospotrebnadzor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchRospotrebnadzorSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchRospotrebnadzor_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MassLeaderAndFounder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/MassLeaderAndFounder" message="tns:IApiSkrin_MassLeaderAndFounder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/MassLeaderAndFounderResponse" message="tns:IApiSkrin_MassLeaderAndFounder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/MassLeaderAndFounderSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_MassLeaderAndFounder_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosobrnadzor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosobrnadzor" message="tns:IApiSkrin_SearchRosobrnadzor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosobrnadzorResponse" message="tns:IApiSkrin_SearchRosobrnadzor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosobrnadzorSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchRosobrnadzor_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnreliabilityAddressUL">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/UnreliabilityAddressUL" message="tns:IApiSkrin_UnreliabilityAddressUL_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/UnreliabilityAddressULResponse" message="tns:IApiSkrin_UnreliabilityAddressUL_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/UnreliabilityAddressULSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_UnreliabilityAddressUL_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRostehnadzor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchRostehnadzor" message="tns:IApiSkrin_SearchRostehnadzor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchRostehnadzorResponse" message="tns:IApiSkrin_SearchRostehnadzor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchRostehnadzorSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchRostehnadzor_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosprirodnadzor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosprirodnadzor" message="tns:IApiSkrin_SearchRosprirodnadzor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosprirodnadzorResponse" message="tns:IApiSkrin_SearchRosprirodnadzor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchRosprirodnadzorSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchRosprirodnadzor_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBadProvider">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckBadProvider" message="tns:IApiSkrin_CheckBadProvider_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckBadProviderResponse" message="tns:IApiSkrin_CheckBadProvider_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckBadProviderSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckBadProvider_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NalogDebt">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/NalogDebt" message="tns:IApiSkrin_NalogDebt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/NalogDebtResponse" message="tns:IApiSkrin_NalogDebt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/NalogDebtSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_NalogDebt_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchTrademark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/SearchTrademark" message="tns:IApiSkrin_SearchTrademark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/SearchTrademarkResponse" message="tns:IApiSkrin_SearchTrademark_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/SearchTrademarkSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_SearchTrademark_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsFl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsFl" message="tns:IApiSkrin_CheckSanctionsFl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsFlResponse" message="tns:IApiSkrin_CheckSanctionsFl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsFlSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckSanctionsFl_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsUl">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsUl" message="tns:IApiSkrin_CheckSanctionsUl_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsUlResponse" message="tns:IApiSkrin_CheckSanctionsUl_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsUlSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckSanctionsUl_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsIndirect">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsIndirect" message="tns:IApiSkrin_CheckSanctionsIndirect_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsIndirectResponse" message="tns:IApiSkrin_CheckSanctionsIndirect_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/CheckSanctionsIndirectSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_CheckSanctionsIndirect_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFLStructure">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/GetFLStructure" message="tns:IApiSkrin_GetFLStructure_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/GetFLStructureResponse" message="tns:IApiSkrin_GetFLStructure_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/GetFLStructureSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_GetFLStructure_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrul">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgrul" message="tns:IApiSkrin_ReportEgrul_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgrulResponse" message="tns:IApiSkrin_ReportEgrul_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgrulSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_ReportEgrul_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrip">
+      <wsdl:input wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgrip" message="tns:IApiSkrin_ReportEgrip_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgripResponse" message="tns:IApiSkrin_ReportEgrip_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IApiSkrin/ReportEgripSeacherFaultTrackFault" name="SeacherFaultTrackFault" message="tns:IApiSkrin_ReportEgrip_SeacherFaultTrackFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IApiSkrin" type="tns:IApiSkrin">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceAuthorization">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ServiceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceExit">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ServiceExit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Search2">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/Search2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetProfileUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyReport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyStructure">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCoownersHistory">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyCoownersHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntrepreneurReport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetEntrepreneurReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOwnershipHierarchy">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyOwnershipHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLight">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightList">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIPList">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightIPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchPravoUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchPravoIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebt">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchDebt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebtFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchDebtFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisqualifiedPersons">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/DisqualifiedPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PublPersons">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/PublPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchZakupki">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchZakupki" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckPassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTerrorUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTerrorFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/BankruptcyUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/BankruptcyFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccount">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZalog">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckZalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWorkPermit">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckWorkPermit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInnFl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetInnFl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMassReg">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchMassReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FATF">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/FATF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlcohol">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchAlcohol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHealth">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchHealth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRospotrebnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRospotrebnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MassLeaderAndFounder">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/MassLeaderAndFounder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosobrnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRosobrnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnreliabilityAddressUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/UnreliabilityAddressUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRostehnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRostehnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosprirodnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRosprirodnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBadProvider">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckBadProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NalogDebt">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/NalogDebt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTrademark">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTrademark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsFl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsFl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsUl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsUl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsIndirect">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsIndirect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFLStructure">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetFLStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrul">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ReportEgrul" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrip">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ReportEgrip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IApiSkrin1" type="tns:IApiSkrin">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IApiSkrin1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ServiceAuthorization">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ServiceAuthorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceExit">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ServiceExit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Search2">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/Search2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetProfileUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyReport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyStructure">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyCoownersHistory">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyCoownersHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntrepreneurReport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetEntrepreneurReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCompanyOwnershipHierarchy">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetCompanyOwnershipHierarchy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLight">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLight" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightList">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStopLightIPList">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetStopLightIPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchPravoUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPravoIP">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchPravoIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebt">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchDebt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchDebtFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchDebtFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DisqualifiedPersons">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/DisqualifiedPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PublPersons">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/PublPersons" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBalance">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchZakupki">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchZakupki" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassport">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckPassport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTerrorUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTerrorFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTerrorFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/BankruptcyUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="BankruptcyFL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/BankruptcyFL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAccount">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckZalog">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckZalog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckWorkPermit">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckWorkPermit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInnFl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetInnFl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchMassReg">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchMassReg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FATF">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/FATF" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlcohol">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchAlcohol" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchHealth">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchHealth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRospotrebnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRospotrebnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="MassLeaderAndFounder">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/MassLeaderAndFounder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosobrnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRosobrnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UnreliabilityAddressUL">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/UnreliabilityAddressUL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRostehnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRostehnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchRosprirodnadzor">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchRosprirodnadzor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBadProvider">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckBadProvider" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NalogDebt">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/NalogDebt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SearchTrademark">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/SearchTrademark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsFl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsFl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsUl">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsUl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSanctionsIndirect">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/CheckSanctionsIndirect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFLStructure">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/GetFLStructure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrul">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ReportEgrul" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReportEgrip">
+      <soap:operation soapAction="http://tempuri.org/IApiSkrin/ReportEgrip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SeacherFaultTrackFault">
+        <soap:fault use="literal" name="SeacherFaultTrackFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ApiSkrin">
+    <wsdl:port name="BasicHttpBinding_IApiSkrin" binding="tns:BasicHttpBinding_IApiSkrin">
+      <soap:address location="http://api.skrin.ru/ApiSkrin.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IApiSkrin1" binding="tns:BasicHttpBinding_IApiSkrin1">
+      <soap:address location="https://api.skrin.ru/ApiSkrin.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

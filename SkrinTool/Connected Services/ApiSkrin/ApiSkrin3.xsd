@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ApiService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ApiService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/Skrin.Models.Iss.Content" />
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ApiService" />
+  <xs:import schemaLocation="https://api.skrin.ru/ApiSkrin.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/SkrinBLL.Models" />
+  <xs:complexType name="SantionsResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/ApiService" base="q1:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Skrin.Models.Iss.Content" minOccurs="0" name="Data" nillable="true" type="q2:ContainsInSancList" />
+          <xs:element minOccurs="0" name="ResultInfo" nillable="true" type="q1:ResultInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SantionsResult" nillable="true" type="tns:SantionsResult" />
+  <xs:complexType name="SantionsResultUl">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/ApiService" base="q3:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Skrin.Models.Iss.Content" minOccurs="0" name="Data" nillable="true" type="q4:ContainsInSancListUl" />
+          <xs:element minOccurs="0" name="ResultInfo" nillable="true" type="q3:ResultInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SantionsResultUl" nillable="true" type="tns:SantionsResultUl" />
+  <xs:complexType name="SanctionsIndirectResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q5="http://schemas.datacontract.org/2004/07/ApiService" base="q5:ServiceResult">
+        <xs:sequence>
+          <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SkrinBLL.Models" minOccurs="0" name="Data" nillable="true" type="q6:SanctionsInfo" />
+          <xs:element minOccurs="0" name="ResultInfo" nillable="true" type="q5:ResultInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SanctionsIndirectResult" nillable="true" type="tns:SanctionsIndirectResult" />
+  <xs:complexType name="FLStructureResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q7="http://schemas.datacontract.org/2004/07/ApiService" base="q7:ServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Data" nillable="true" type="tns:FLStructure" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FLStructureResult" nillable="true" type="tns:FLStructureResult" />
+  <xs:complexType name="FLStructure">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="founders" nillable="true" type="tns:FLInnFioListOfFLStructureULDataItemHWNDo5_PG" />
+      <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ips" nillable="true" type="tns:FLInnFioListOfFLStructureIPDataItemHWNDo5_PG" />
+      <xs:element minOccurs="0" name="managers" nillable="true" type="tns:FLInnFioListOfFLStructureULDataItemHWNDo5_PG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLStructure" nillable="true" type="tns:FLStructure" />
+  <xs:complexType name="FLInnFioListOfFLStructureULDataItemHWNDo5_PG">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FLInnFioListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FLStructureULDataItem" Namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="byFioList" nillable="true" type="tns:ArrayOfFLStructureULDataItem" />
+      <xs:element minOccurs="0" name="byInnList" nillable="true" type="tns:ArrayOfFLStructureULDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLInnFioListOfFLStructureULDataItemHWNDo5_PG" nillable="true" type="tns:FLInnFioListOfFLStructureULDataItemHWNDo5_PG" />
+  <xs:complexType name="ArrayOfFLStructureULDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FLStructureULDataItem" nillable="true" type="tns:FLStructureULDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFLStructureULDataItem" nillable="true" type="tns:ArrayOfFLStructureULDataItem" />
+  <xs:complexType name="FLStructureULDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grn_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="is_arch" type="xs:int" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="share" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="share_percent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ul_inn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ul_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ul_ogrn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ul_status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLStructureULDataItem" nillable="true" type="tns:FLStructureULDataItem" />
+  <xs:complexType name="FLInnFioListOfFLStructureIPDataItemHWNDo5_PG">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="FLInnFioListOf{0}{#}" Namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="FLStructureIPDataItem" Namespace="http://schemas.datacontract.org/2004/07/ApiService.Models" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="byFioList" nillable="true" type="tns:ArrayOfFLStructureIPDataItem" />
+      <xs:element minOccurs="0" name="byInnList" nillable="true" type="tns:ArrayOfFLStructureIPDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLInnFioListOfFLStructureIPDataItemHWNDo5_PG" nillable="true" type="tns:FLInnFioListOfFLStructureIPDataItemHWNDo5_PG" />
+  <xs:complexType name="ArrayOfFLStructureIPDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FLStructureIPDataItem" nillable="true" type="tns:FLStructureIPDataItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFLStructureIPDataItem" nillable="true" type="tns:ArrayOfFLStructureIPDataItem" />
+  <xs:complexType name="FLStructureIPDataItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fio" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grn_date" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="inn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ip_status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="is_arch" type="xs:int" />
+      <xs:element minOccurs="0" name="ogrnip" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="region" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FLStructureIPDataItem" nillable="true" type="tns:FLStructureIPDataItem" />
+</xs:schema>
